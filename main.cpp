@@ -1,22 +1,28 @@
 #include <iostream>
-#include "Heap/MinHeap.h"
+#include "Array/dynamicArray.h"
 
 
 int main() {
-	MinHeap<int> heap;
 
-	heap.push(10);
-	heap.push(18);
-	heap.push(7);
-	heap.push(0);
-	heap.push(4);
-	std::cout << "\nPrint\n";
-	heap.print();
+	DynamicArray<int> data;
+	data.push_back(10);
 
-	std::cout << "\nPopping\n";
-	std::cout << heap.pop() << std::endl;
-	std::cout << heap.pop() << std::endl;
-	std::cout << heap.pop() << std::endl;
-	std::cout << heap.pop() << std::endl;
-	std::cout << heap.pop() << std::endl;
+	data.emplace_back(2);
+
+	for (int i = 0; i < data.size(); i++) {
+		std::cout << data[i] << std::endl;
+	}
+
+	data.pop_back();
+
+	for (int i = 0; i < data.size(); i++) {
+		std::cout << data[i] << std::endl;
+	}
+
+	data.clear();
+
+	if (data.isEmpty()) {
+		std::cout << "Empty\n";
+	}
+	
 }
