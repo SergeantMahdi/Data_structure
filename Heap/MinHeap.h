@@ -1,7 +1,10 @@
-
 #pragma once
 
-
+//Note: Only Comparable types must be used in this data structure
+//Note: You can achive the same functionality with linked-list
+/*Time complexity of every functionality:
+push: O(log n) | pop: O(log n) | minHeapSort: O(log n)
+*/
 template<typename _Type>
 class MinHeap {
 private:
@@ -100,11 +103,15 @@ public:
 		if (!isEmpty()) {
 
 			if (m_size == 1) {
+				m_size--;
 				return m_array[0];
 			}
 			_Type root = m_array[0];
+
+			//replace the last element with the root of heap
 			m_array[0] = m_array[m_size - 1];
 			m_size--;
+
 			minHeapSort(0);
 			return root;
 		}
