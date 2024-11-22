@@ -4,7 +4,7 @@ template<typename _Type, size_t _Capacity>
 class Array {
 
 private:
-	_Type* m_array;
+	_Type m_array[_Capacity];
 	size_t m_size;
 private:
 	void outOfBoundary_excep() {
@@ -19,7 +19,7 @@ private:
 public:
 
 	Array()
-		:m_array(new _Type[_Capacity]), m_size(0){}
+		:m_size(0){}
 
 
 	size_t size() {
@@ -56,6 +56,4 @@ public:
 
 		return m_array[index];
 	}
-
-
 };

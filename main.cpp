@@ -13,7 +13,7 @@ int main() {
 		std::cout << arr[i] << std::endl;
 	}
 
-	arr.replace(100, 1);
+	arr.replace(1, 10);
 	std::cout << "\n+===============+\n";
 	for (int i = 0; i < arr.size(); i++) {
 		std::cout << arr[i] << std::endl;
