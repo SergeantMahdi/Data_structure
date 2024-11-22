@@ -26,7 +26,7 @@ public:
 		return m_size;
 	}
 
-	void push_back(const _Type data) {
+	void add(const _Type data) {
 		if (m_size >= _Capacity) {
 			std::cout << "the array is full!";
 			return;
@@ -43,7 +43,7 @@ public:
 	}
 
 	void fill(const _Type& data) {
-		for (int i = 0; i < _Capacity ; i++) {
+		for (int i = m_size; i < _Capacity; i++) {
 				m_array[i] = data;
 				m_size++;
 		}
@@ -54,6 +54,10 @@ public:
 			outOfBoundary_excep();
 		}
 
+
+		if (index >= m_size) {
+			m_size++;
+		}
 		return m_array[index];
 	}
 };
