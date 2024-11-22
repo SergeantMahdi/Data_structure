@@ -1,28 +1,21 @@
 #include <iostream>
-#include "Array/dynamicArray.h"
+#include <array>
+#include "Array/staticArray.h"
 
 
 int main() {
 
-	DynamicArray<int> data;
-	data.push_back(10);
+	Array<int, 10> arr;
+	arr.fill(10);
 
-	data.emplace_back(2);
-
-	for (int i = 0; i < data.size(); i++) {
-		std::cout << data[i] << std::endl;
+	std::cout << "\n+===============+\n";
+	for (int i = 0; i < arr.size(); i++) {
+		std::cout << arr[i] << std::endl;
 	}
 
-	data.pop_back();
-
-	for (int i = 0; i < data.size(); i++) {
-		std::cout << data[i] << std::endl;
+	arr.replace(100, 1);
+	std::cout << "\n+===============+\n";
+	for (int i = 0; i < arr.size(); i++) {
+		std::cout << arr[i] << std::endl;
 	}
-
-	data.clear();
-
-	if (data.isEmpty()) {
-		std::cout << "Empty\n";
-	}
-	
 }
