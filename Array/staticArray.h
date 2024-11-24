@@ -16,6 +16,12 @@ private:
 			std::exit(0);
 		}
 	}
+
+	void swap(_Type& first, _Type& second) {
+		_Type temp = first;
+		first = second;
+		second = temp;
+	}
 public:
 
 	Array()
@@ -46,6 +52,18 @@ public:
 		for (int i = m_size; i < _Capacity; i++) {
 				m_array[i] = data;
 				m_size++;
+		}
+	}
+
+	void reverse() {
+
+		//Reverse operation in time complexity of O(Log n)
+
+		size_t s = m_size - 1;
+
+		for (int i = 0; i < m_size / 2; i++) {
+			swap(m_array[i], m_array[s]);
+			s--;
 		}
 	}
 
