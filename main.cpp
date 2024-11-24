@@ -1,17 +1,23 @@
 #include <iostream>
-#include "Linked-List/singlyLinkedList.h"
+#include "Array/staticArray.h"
 
 
 int main() {
-	Linked_List<int> list;
-	list.push(10);
-	list.push(20);
-	list.push(0);
-	list.push(19);
-	list.push(16);
+	Array<int, 10> arr;
+	for (int i = 0; i < 10; i++) {
+		arr[i] = i + 1;
+	}
 
-	list.print();
-	std::cout << "\n============\n";
-	list.remove(0);
-	list.print();
+	for (int i = 0; i < arr.size() ; i++) {
+		std::cout << arr[i] << std::endl;
+	}
+
+	std::cout << "====================\n";
+
+	arr.reverse();
+
+	for (int i = 0; i < arr.size(); i++) {
+		std::cout << arr[i] << std::endl;
+	}
+
 }
