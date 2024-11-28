@@ -1,23 +1,25 @@
 #include <iostream>
-#include "Array/staticArray.h"
-
+#include "Stack/stack.h"
 
 int main() {
-	Array<int, 10> arr;
-	for (int i = 0; i < 10; i++) {
-		arr[i] = i + 1;
+	Stack<int> stack;
+
+	stack.push(10);
+	stack.push(60);
+	stack.push(450);
+	stack.push(130);
+	stack.push(1);
+
+
+	if (stack.search(60)) {
+		std::cout << 60 << " exits\n";
+	}
+	else {
+		std::cout << 60 << " doesn't exit\n";
 	}
 
-	for (int i = 0; i < arr.size() ; i++) {
-		std::cout << arr[i] << std::endl;
-	}
-
-	std::cout << "====================\n";
-
-	arr.reverse();
-
-	for (int i = 0; i < arr.size(); i++) {
-		std::cout << arr[i] << std::endl;
+	while(!stack.isEmpty()) {
+		std::cout << stack.pop() << std::endl;
 	}
 
 }
